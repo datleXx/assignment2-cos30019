@@ -14,7 +14,7 @@ from KnowledgeBase import KnowledgeBase
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Enter command in following format: iengine method filename")
+        print("Enter command in following format: python iengine.py <filename> <method>")
         print("Methods: TT, FC and BC")
         exit(0)
 

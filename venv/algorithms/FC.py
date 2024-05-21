@@ -4,7 +4,7 @@ from algorithms.Algorithm import Algorithm
 sys.setrecursionlimit(100000)
 class FC(Algorithm):
     def __init__(self) -> None:
-        super.__init__()
+        super().__init__()
         self.output = ""
 
     def infer(self, kb, query):
