@@ -16,7 +16,7 @@ from KnowledgeBase import KnowledgeBase
 
 if __name__ == "__main__":
     if len(sys.argv) != 6 and len(sys.argv) != 3:
-        print("Enter command in following format: python iengine.py <filename> <method> <mt> <mf> <p>")
+        print("Enter command in following format: python iengine.py <filename> <method> (<mt> <mf> <p>)")
         print("Methods: TT, FC, BC, WSAT")
         exit(0)
 
