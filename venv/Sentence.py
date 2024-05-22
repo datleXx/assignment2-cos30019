@@ -8,8 +8,6 @@ class Sentence:
         self.lst, self.symbols = self.parse_sentence(string)
         self.count = self.setCount(self.lst.copy())
 
-
-    
     def hasSymbol(self, symbol): ## check if the sentence has a symbol
         s = PropositionalSymbol(symbol)
         for x in self.symbols: 

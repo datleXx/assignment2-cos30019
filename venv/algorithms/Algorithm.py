@@ -5,7 +5,7 @@ sys.setrecursionlimit(100000)
 
 class Algorithm :
     def __init__(self) -> None:
-        self.output = ""
+        self.output = "NO"
 
     def getOutput(self):
         return self.output

@@ -1,4 +1,4 @@
 TELL
-((P || Q) <=> B) => R; A => P; ~A; Q; B
+~((P || Q) <=> B) => R; A => P; ~A; Q; B
 ASK
-R & Q
+R
