@@ -5,7 +5,7 @@ from algorithms.Algorithm import Algorithm
 sys.setrecursionlimit(10000)
 class BC(Algorithm):
     def __init__(self)-> None:
-        super.__init__()
+        super().__init__()
         self.output = "NO"
         self.outputSymbols = []
     

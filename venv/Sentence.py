@@ -148,7 +148,9 @@ class Sentence:
             else:
                 stack.append(token)
 
-        return stack[0]
+        if stack:
+            return stack[0]
+        return False
             
        
         

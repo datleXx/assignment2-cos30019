@@ -1,0 +1,4 @@
+TELL
+A <=> B; B <=> (~C & D); ~D;
+ASK
+~A

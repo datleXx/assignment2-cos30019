@@ -1,7 +1,7 @@
 import random
 from algorithms.Algorithm import Algorithm
 
-class WSAT(Algorithm):
+class WSAT2(Algorithm):
     def __init__(self, max_tries=400, max_flips=100, p=0.5):
         super().__init__()
         self.max_tries = max_tries
@@ -13,6 +13,7 @@ class WSAT(Algorithm):
     def infer(self, kb, query):
         self.kb = kb
         self.query = query
+        found_satisfying_model = False
 
         for try_num in range(self.max_tries):
             temp_sol = self.random_assignment()
@@ -20,18 +21,19 @@ class WSAT(Algorithm):
             for flip_num in range(self.max_flips):
                 unsatisfied_clause = self.choose_unsatisfied_clause(temp_sol)
                 if unsatisfied_clause is None:  # All clauses satisfied
-                    if self.check_query(best_sol):
-                        self.output = "YES"
-                        return
-                    else:
-                        self.output = "NO"
-                        return
+                    found_satisfying_model = True  # Mark that we found a model
+                    if not self.check_query(best_sol):
+                        return  # If this model doesn't entail the query, we are done
+                    break  # Move to the next random assignment
                 if random.uniform(0, 1) < self.p:
                     self.flip_random_atom(temp_sol, unsatisfied_clause)
                 else:
                     self.flip_best_atom(temp_sol, unsatisfied_clause)
                 if self.is_better(temp_sol, best_sol):
                     best_sol = temp_sol.copy()
+
+        if found_satisfying_model:
+            self.output = "YES"  # If we found at least one model and it entailed the query
         return
 
     def random_assignment(self):

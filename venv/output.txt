@@ -1,0 +1,8 @@
+python iengine.py tests/test_HornKB_1.txt FC
+YES: a, b
+0:00:00.000039
+
+python iengine.py tests/test_HornKB_1.txt BC
+YES: a, b
+0:00:00.000044
+

@@ -9,7 +9,8 @@ class KnowledgeBase:
         self.sentences = []        # sentences contained in knowledge base
         self.symbols = {}         # all found unique symbols in sentences
         for sentence in sentences: # add sentences
-            self.tell(sentence)
+            if sentence:
+                self.tell(sentence)
 
     # tell knowledge base a sentence
     def tell(self, sentence):
@@ -27,7 +28,6 @@ class KnowledgeBase:
                 if symbol in self.symbols:
                     self.symbols.pop(symbol)
                 self.symbols[symbol] = False
-                
 
     def setValue(self, dict): 
         for k,v in dict.items(): 

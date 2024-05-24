@@ -11,15 +11,13 @@ class FC(Algorithm):
         sentenceCount = {}
         inferredSymbol = []
         symbolList = {}
-        print(kb.symbols)
-        
+
         # Add the symbols that are true in in the list and make the inferred list
         for symbol in kb.symbols.keys():
             symbolList[symbol] = False
             if kb.symbols[symbol]:
                 inferredSymbol.append(symbol)
-                print(inferredSymbol)
-                
+
         # Initiallize the count for each sentence 
         for sentence in kb.sentences:
             sentenceCount[sentence] = sentence.count

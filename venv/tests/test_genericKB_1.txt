@@ -1,0 +1,4 @@
+TELL
+A || A;
+ASK
+A

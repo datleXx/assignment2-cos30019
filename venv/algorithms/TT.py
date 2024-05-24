@@ -31,7 +31,6 @@ class TT(Algorithm):
         if len(symbols) == 0: #if we get enough number of symbols then check for entailment
             if kb.PLTrue(model): #satisfy kb
                 query.setValue(model)
-                print(model)
                 if query.result(): #satisfy query
                     self.count +=1
                 else: #otherwise return no
