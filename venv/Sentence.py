@@ -6,8 +6,11 @@ class Sentence:
     def __init__(self, string): 
         self.parser = Parser()
         self.lst, self.symbols = self.parse_sentence(string)
+        self.cnf = self.parser.cnf_parser(self.lst)
         self.count = self.setCount(self.lst.copy())
 
+
+    
     def hasSymbol(self, symbol): ## check if the sentence has a symbol
         s = PropositionalSymbol(symbol)
         for x in self.symbols: 
@@ -148,9 +151,9 @@ class Sentence:
             else:
                 stack.append(token)
 
-        if stack:
-            return stack[0]
-        return False
+        return stack[0]
+    
+
             
        
         
